@@ -12,7 +12,7 @@ user3 = User.create(firstname: 'Bruce', lastname: 'Dickinson', email: 'bruce@dic
 user4 = User.create(firstname: 'Lemmy', lastname: 'Kilmister', email: 'lemmy@kilmister.com', password: '321321321', password_confirmation: '321321321')
 user5 = User.create(firstname: 'Dave', lastname: 'Grohl', email: 'dave@grohl.com', password: '321321321', password_confirmation: '321321321')
 
-admin = User.create(firstname: 'Morgan', lastname: 'Freeman', email: 'admin@thisapp.com', password: '321321321', password_confirmation: '321321321')
+admin = User.create(admin: true, firstname: 'Morgan', lastname: 'Freeman', email: 'admin@thisapp.com', password: '321321321', password_confirmation: '321321321')
 
 category1 = Category.create(name: 'Category1')
 category2 = Category.create(name: 'Category2')
