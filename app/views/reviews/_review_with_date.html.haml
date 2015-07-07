@@ -1,0 +1,11 @@
+%hr
+%p= review_with_date.content
+%p
+  Rating:
+  %b= review_with_date.rating
+  by
+  %em= review_with_date.author
+  ( added:
+  = review_with_date.formatted_date
+  )
+

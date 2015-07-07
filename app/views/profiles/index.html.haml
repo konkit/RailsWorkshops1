@@ -1,0 +1,24 @@
+.container
+  = link_to 'Back to categories list', categories_path, class: 'btn btn-default'
+
+  .row
+    %h1 Profiles
+    .col-md-12
+      %table.table
+        %tr
+          %th Name
+          %th Email
+          %th Joined
+          %th
+
+        - @profiles.each do |profile|
+          %tr
+            %td
+              = profile.firstname
+              = profile.lastname
+            %td
+              = profile.email
+            %td
+              = profile.created_at
+            %td= link_to 'Show', profile_path(profile), class: 'btn btn-default'
+      %br

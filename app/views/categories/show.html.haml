@@ -2,7 +2,8 @@
   %p#notice.alert.alert-info= notice
 
 .container
-  = link_to 'Edit', edit_category_path(category), class: 'btn btn-default'
+  - if current_user && current_user.admin?
+    = link_to 'Edit', edit_category_path(category), class: 'btn btn-default'
   = link_to 'Back', categories_path, class: 'btn btn-default'
 
   .row

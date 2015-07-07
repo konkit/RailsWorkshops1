@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :profiles, only: [:index, :show]
+
   root 'categories#index'
 
   devise_for :user, controllers: { registrations: 'registrations'}

@@ -1,0 +1,21 @@
+.container
+  - if current_user && current_user.admin?
+    = link_to 'Back to profiles list', profiles_path, class: 'btn btn-default'
+  = link_to 'Back to categories list', categories_path, class: 'btn btn-default'
+
+  .row
+    %h1= 'Profile: ' + @profile.firstname + ' ' + @profile.lastname
+    .col-md-6
+      %p
+        %b email:
+        = @profile.email
+      %p
+        %b joined:
+        = @profile.created_at
+
+      %h3 Reviews:
+      = render partial: "reviews/review_with_date", collection: @reviews
+
+
+
+
