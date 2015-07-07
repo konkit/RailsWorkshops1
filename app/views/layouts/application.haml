@@ -14,7 +14,13 @@
         .navbar-header
           %span.navbar-brand #{AppConfig.workshops_name}
         %p.navbar-text.navbar-right
-          Links should go here
+          - if !current_user.nil?
+            Welcome
+            = current_user.firstname + ' ' + current_user.lastname + ', '
+            = link_to('Logout', destroy_user_session_path, :method => :delete, :class => " button btn" )
+          - else
+            = link_to('Sign in', new_user_session_path, :class => " button btn")
+            = link_to('Sign up', new_user_registration_path, :class => " button btn")
     .container-fluid
       .row
         .col-lg-12
