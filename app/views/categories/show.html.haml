@@ -7,8 +7,8 @@
   = link_to 'Back', categories_path, class: 'btn btn-default'
 
   .row
-    %h1= 'Category: ' + category.name
     .col-md-6
+      %h1= 'Category: ' + category.name
       %h3 Products:
       %ul
         - category.products.each do |product|
@@ -16,9 +16,10 @@
 
       %p= link_to 'See products list', category_products_path(category), class: 'btn btn-default'
 
-    .col-md-6
-      %p
-        %h3 New product
-        = render 'products/form'
+    - if current_user
+      .col-md-6
+        %p
+          %h3 New product
+          = render 'products/form'
 
 

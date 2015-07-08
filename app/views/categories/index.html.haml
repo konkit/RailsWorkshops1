@@ -21,10 +21,10 @@
             %td= category.name
             %td= link_to 'Show', category, class: 'btn btn-default'
 
-            - if current_user && current_user.admin?
+            - if user_signed_in? && current_user.admin?
               %td= link_to 'Edit', edit_category_path(category), class: 'btn btn-default'
 
-            - if current_user && current_user.admin?
+            - if user_signed_in? && current_user.admin?
               %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'
 
       %br

@@ -1,5 +1,8 @@
-%h1 New product
+.container
+  = link_to 'Back', category_products_path, class: 'btn btn-default'
 
-= render 'form'
+  .row
+    .col-md-8
+      %h1 New product
+      = render 'form'
 
-= link_to 'Back', category_products_path

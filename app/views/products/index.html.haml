@@ -1,5 +1,7 @@
 .container
   = link_to 'Back', category_path(products.first.category), class: 'btn btn-default'
+  - if current_user
+    = link_to 'New Product', new_category_product_path(products.first.category), class: 'btn btn-default'
 
   .row
     %h1= 'Products in ' + products.first.category.name
