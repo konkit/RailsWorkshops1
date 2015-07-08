@@ -19,8 +19,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    self.category = Category.new(category_params)
-
+    category = Category.new(category_params)
     if category.save
       redirect_to category, notice: 'Category was successfully created.'
     else
@@ -47,7 +46,7 @@ class CategoriesController < ApplicationController
     end
 
     def check_admin
-      if ! current_user.admin?
+      if !current_user.admin?
         redirect_to new_user_session_path
       end
     end
