@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.new(category_params)
+    self.category = Category.new(category_params)
     if category.save
       redirect_to category, notice: 'Category was successfully created.'
     else
